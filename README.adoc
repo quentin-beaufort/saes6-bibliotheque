@@ -1,3 +1,10 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 = Application de gestion de bibliothèque
 
 L'application de gestion de bibliothèque permet aux utilisateurs de réserver et d'emprunter des livres, ainsi qu'aux bibliothécaires d'accéder à un back office pour gérer les livres et les utilisateurs.
