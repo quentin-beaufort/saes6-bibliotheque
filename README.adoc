@@ -1,1 +1,19 @@
+= Application de gestion de bibliothèque
 
+L'application de gestion de bibliothèque permet aux utilisateurs de réserver et d'emprunter des livres, ainsi qu'aux bibliothécaires d'accéder à un back office pour gérer les livres et les utilisateurs.
+
+== Démarrer le projet
+
+IMPORTANT: Le projet nécessite d'avoir PHP 8.2, MariaDB 10.8.3, NodeJS 20.11.0, Angular 17.0.10 et Symfony 5.8.4 installés sur votre machine.
+
+Pour démarrer le projet, suivez les étapes suivantes :
+
+. Démarrer la base de données MariaDB en exécutant ```.\start-server.bat```
+
+. Démarrer le serveur Symfony sur le port 8008 ```symfony server:start --port=8008```
+
+. Démarrer le serveur Angular ```ng serve```
+
+Assurez-vous d'avoir les dépendances nécessaires installées et de s'être placé dans les bons dossiers avant de démarrer les serveurs Symfony et Angular.
+
+Vous pouvez maintenant accéder à l'application de gestion de bibliothèque en ouvrant votre navigateur et en accédant à l'URL suivante : `http://localhost:4200`.
