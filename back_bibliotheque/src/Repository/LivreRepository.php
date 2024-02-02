@@ -21,6 +21,14 @@ class LivreRepository extends ServiceEntityRepository
         parent::__construct($registry, Livre::class);
     }
 
+    public function findAllAsArray()
+    {
+        return $this->createQueryBuilder('l')
+            ->select('l.id', 'l.titre', 'l.dateSortie', 'l.langue', 'l.photoCouverture')
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+    }
+
 //    /**
 //     * @return Livre[] Returns an array of Livre objects
 //     */
