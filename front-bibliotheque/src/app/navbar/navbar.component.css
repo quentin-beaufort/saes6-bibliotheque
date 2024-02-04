@@ -13,7 +13,7 @@ nav {
 
 
   .search-bar{
-    margin-left : 60%;
+    margin-left : 55%;
   }
   .search-bar input {
     padding: 10px;
@@ -38,6 +38,7 @@ nav {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    top : 30%;
   }
   
   .nav-links a {
