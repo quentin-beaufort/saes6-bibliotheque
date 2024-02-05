@@ -8,16 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './login-form/login-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [
