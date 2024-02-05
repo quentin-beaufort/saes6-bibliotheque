@@ -1,0 +1,84 @@
+
+.princip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    border: 1px solid #1f4251;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: #34495e;
+    border-radius: 10%;
+}
+
+
+form {
+   margin-top: -10%;
+  }
+  
+  h2 {
+    margin-top: 10%;
+    color: white;
+  }
+  
+  .identité,
+  .log,
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+  
+  .identité div,
+  .log div,
+  .info div {
+    flex: 1;
+    margin-right: 10px; 
+  }
+  
+  input {
+    width: 100%;
+    line-height: 30px;
+    border: none;
+    background-color: #1f4251;
+    color: white;
+    border-radius: 3%;
+    text-align: center;
+    margin-top: 10px; 
+  }
+  
+  input::placeholder {
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  
+  button {
+    width: 100%;
+    border: none;
+    margin-top: 10px; 
+    background-color: #1f4251;
+    color: white;
+    
+  }
+  
+  button:hover {
+    color: #3498db;
+  }
+  
+  h4 {
+    color: white;
+    margin-top: 10px; 
+  }
+
+  label{
+    color: white;
+  }
+
+  .adr{
+    margin-top: 10%;
+  }

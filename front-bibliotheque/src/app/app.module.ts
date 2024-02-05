@@ -11,11 +11,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './login-form/login-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
+    
   ],
   imports: [
     BrowserModule,
