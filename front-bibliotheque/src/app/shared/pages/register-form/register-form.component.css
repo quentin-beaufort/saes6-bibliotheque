@@ -1,84 +1,107 @@
-
-.princip{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 60%;
-    border: 1px solid #1f4251;
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 5%;
-    background-color: #34495e;
-    border-radius: 10%;
+*{
+  padding: 0;
+  margin: 0;
+  
 }
 
 
-form {
-   margin-top: -10%;
-  }
-  
-  h2 {
-    margin-top: 10%;
-    color: white;
-  }
-  
-  .identité,
-  .log,
-  .info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px; 
-  }
-  
-  .identité div,
-  .log div,
-  .info div {
-    flex: 1;
-    margin-right: 10px; 
-  }
-  
-  input {
-    width: 100%;
-    line-height: 30px;
-    border: none;
-    background-color: #1f4251;
-    color: white;
-    border-radius: 3%;
-    text-align: center;
-    margin-top: 10px; 
-  }
-  
-  input::placeholder {
-    text-align: center;
-    line-height: 30px;
-    color: white;
-  }
-  
-  button {
-    width: 100%;
-    border: none;
-    margin-top: 10px; 
-    background-color: #1f4251;
-    color: white;
-    
-  }
-  
-  button:hover {
-    color: #3498db;
-  }
-  
-  h4 {
-    color: white;
-    margin-top: 10px; 
-  }
+.bd{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
 
-  label{
-    color: white;
-  }
+.princip{
+  width: 100%;
+  max-width: 700px;
+  background-color: #34495e;
+  padding: 28px;
+  margin: 0 28px;
+  border-radius: 10px;
+  margin-top: -10%;
+}
 
-  .adr{
-    margin-top: 10%;
-  }
+h2{
+  text-align: center;
+  padding-bottom: 6px;
+  color: white;
+  border-bottom: solid 1px white;
+  font-size: 20px;
+}
+
+.identité{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.info{
+  display: flex;
+  flex-wrap: wrap;
+  width:45%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+.info label{
+  width: 100%;
+  color:white;
+  font-size:15px;
+  font-weight:100px;
+  margin: 5px 0;
+}
+
+.info input{
+  height: 40px;
+  width:90%;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid grey;
+  padding:  0 10px;
+}
+
+.sub button{
+  width: 20%;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  height:28px;
+}
+
+button:hover{
+  color: #3498db;
+}
+
+.sub{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.log{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: solid 1px white;
+  
+}
+
+.log button{
+  width: 40%;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  height:28px;
+}
+
+.log h4{
+  color: white;
+  padding-top: 10px;
+}
