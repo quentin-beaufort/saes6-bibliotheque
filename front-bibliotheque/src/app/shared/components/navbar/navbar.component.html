@@ -1,20 +1,29 @@
-<nav>
-    <div class="navbar-container">
-      <div class="logo">Bibliothèque</div>
-      <ul class="nav-links">
-        <li><a routerLink="/">Accueil</a></li>
-        <li (mouseover)="showDropdown = true" (mouseleave)="showDropdown = false">
-          <a routerLink="/voir-livre">Livres</a>
-          <ul *ngIf="showDropdown">
-            <li *ngFor="let livre of livres">{{ livre.titre }}</li>
-          </ul>
-        </li>
-        <li><a routerLink="/login">Compte</a></li>
-        <li><a routerLink="/reserver-livre">Réservation</a></li>
-      </ul>
-      <div class="search-bar">
-        <input type="text" placeholder="Recherche Livre" />
-        <button></button>
+
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Accueil </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/livres">Livres
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/login">Compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/reserver-livre">Réservation</a>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Titre / Auteur">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </nav>
