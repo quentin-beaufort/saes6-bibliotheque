@@ -14,7 +14,7 @@ export class ApiService {
   constructor(
     private http: HttpClient
   ) { }
-  // Lister les catégories
+
   getLivres(): Observable<Livre[]> {
     return this.http.get<Livre[]>(`${this.apiUrl}/livre`);
   }

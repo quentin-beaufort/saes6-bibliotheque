@@ -10,14 +10,16 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './shared/pages/login-form/login-form.component';
-
+import { LivresListComponent } from './shared/pages/livres-list/livres-list.component';
+import { LivreDetailsComponent } from './shared/pages/livre-details/livre-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
-
+    LivresListComponent,
+    LivreDetailsComponent,
   ],
   imports: [
     BrowserModule,
