@@ -1,7 +1,7 @@
 
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { Livre } from '../models/livre';
+import { Livre } from '../../../models/livre';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +12,12 @@ export class NavbarComponent implements OnInit {
   livres: Livre[] = [];
   showDropdown = false;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.gettroisLivres().subscribe(livres => {
       this.livres = livres;
     });
   }
-  
+
 }

@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginFormComponent } from './shared/pages/login-form/login-form.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
-    
+
   ],
   imports: [
     BrowserModule,
