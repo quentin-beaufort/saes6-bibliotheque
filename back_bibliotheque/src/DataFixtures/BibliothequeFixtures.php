@@ -101,6 +101,7 @@ class BibliothequeFixtures extends Fixture
             $manager->flush();
         }
 
+        /*
         // Création de 100 emprunts
         for ($i = 0; $i < 100; $i++) {
             $emprunt = new Emprunt();
@@ -113,9 +114,9 @@ class BibliothequeFixtures extends Fixture
             $emprunt->setLivre($livre);
 
             // On enleve le livre de la liste des livres pour qu'il ne soit pas emprunté
-            $livres = array_diff($livres, [$livre]);
+            $livres = array_diff($livres, array($livre));
 
-            $adherents = array_diff($adherents, [$adh]);
+            $adherents = array_diff($adherents, array($adh));
 
             $manager->persist($emprunt);
             $manager->flush();
@@ -132,12 +133,13 @@ class BibliothequeFixtures extends Fixture
             $reservation->setLivre($livre);
 
             // On enleve le livre de la liste des livres pour qu'il ne soit pas réservé
-            $livres = array_diff($livres, [$livre]);
+            $livres = array_diff($livres, array($livre));
 
-            $adherents = array_diff($adherents, [$adherent]);
+            $adherents = array_diff($adherents, array($adherent));
 
             $manager->persist($reservation);
             $manager->flush();
         }
+        */
     }
 }

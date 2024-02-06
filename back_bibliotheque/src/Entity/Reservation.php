@@ -23,7 +23,7 @@ class Reservation
 
     #[ORM\OneToOne(inversedBy: 'reservation', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?livre $livre = null;
+    private ?Livre $livre = null;
 
     public function getId(): ?int
     {
