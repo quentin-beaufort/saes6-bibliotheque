@@ -7,8 +7,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 #[ORM\Entity(repositoryClass: LivreRepository::class)]
+#[ApiResource(
+    formats: ['json'],
+    normalizationContext: ['groups' => ['livre:read']],
+    denormalizationContext: ['groups' => ['livre:write']],
+)]
 class Livre
 {
     #[ORM\Id]
@@ -17,21 +25,27 @@ class Livre
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['livre:read', 'livre:write', 'categorie:read', 'reservation:read'])]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['livre:read', 'livre:write', 'categorie:read', 'reservation:read'])]
     private ?\DateTimeInterface $dateSortie = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['livre:read', 'livre:write'])]
     private ?string $langue = null;
 
     #[ORM\Column(length: 512, nullable: true)]
+    #[Groups(['livre:read', 'livre:write'])]
     private ?string $photoCouverture = null;
 
     #[ORM\ManyToMany(targetEntity: Auteur::class, mappedBy: 'livres')]
+    #[Groups(['livre:read'])]
     private Collection $auteurs;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'livres')]
+    #[Groups(['livre:read'])]
     private Collection $categories;
 
     #[ORM\OneToMany(mappedBy: 'livre', targetEntity: Emprunt::class)]

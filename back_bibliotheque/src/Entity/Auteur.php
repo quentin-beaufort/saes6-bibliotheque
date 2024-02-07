@@ -7,7 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiResource(
+    formats: ['json'],
+    normalizationContext: ['groups' => ['auteur:read']],
+    denormalizationContext: ['groups' => ['auteur:write']],
+)]
 #[ORM\Entity(repositoryClass: AuteurRepository::class)]
 class Auteur
 {
@@ -17,27 +24,35 @@ class Auteur
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['auteur:read', 'auteur:write', 'livre:read'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['auteur:read', 'auteur:write', 'livre:read'])]
     private ?string $prenom = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups(['auteur:read', 'auteur:write'])]
     private ?\DateTimeInterface $dateNaissance = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups(['auteur:read', 'auteur:write'])]
     private ?\DateTimeInterface $dateDeces = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['auteur:read', 'auteur:write'])]
     private ?string $nationalite = null;
 
     #[ORM\Column(length: 512, nullable: true)]
+    #[Groups(['auteur:read', 'auteur:write'])]
     private ?string $photo = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['auteur:read', 'auteur:write'])]
     private ?string $description = null;
 
     #[ORM\ManyToMany(targetEntity: Livre::class, inversedBy: 'auteurs')]
+    #[Groups(['auteur:read'])]
     private Collection $livres;
 
     public function __construct()
