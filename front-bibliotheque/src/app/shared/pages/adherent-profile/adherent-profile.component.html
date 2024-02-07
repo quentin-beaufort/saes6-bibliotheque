@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Mon Compte</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Informations de compte</h5>
+          <p class="card-text">Crée le {{ adherent.date_adhesion }}</p>
+          <p class="card-text">Nom/Prénom : {{ adherent.nom }} {{ adherent.prenom }}</p>
+          <p class="card-text">Email : {{ adherent.email }}</p>
+          <p class="card-text">Date de naissance : {{ adherent.date_naiss }}</p>
+          <p class="card-text">Adresse postale : {{ adherent.adresse_postale }}</p>
+          <p class="card-text">Numéro de téléphone : {{ adherent.num_tel }}</p>
+          <p><img class="card-text" src={{adherent.photo}}></p>
+          <a href="#" class="btn btn-primary">Modifier les informations</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
