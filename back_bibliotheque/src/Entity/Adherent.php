@@ -7,8 +7,16 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 #[ORM\Entity(repositoryClass: AdherentRepository::class)]
+#[ApiResource(
+    formats: ['json'],
+    normalizationContext: ['groups' => ['adherent:read']],
+    denormalizationContext: ['groups' => ['adherent:write']],
+)]
 class Adherent implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -17,6 +25,7 @@ class Adherent implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -29,24 +38,31 @@ class Adherent implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['adherent:read'])]
     private ?\DateTimeInterface $dateAdhesion = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $prenom = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?\DateTimeInterface $dateNaiss = null;
 
     #[ORM\Column(length: 512, nullable: true)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $adressePostale = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $numTel = null;
 
     #[ORM\Column(length: 512, nullable: true)]
+    #[Groups(['adherent:read', 'adherent:write'])]
     private ?string $photo = null;
 
     public function getId(): ?int
