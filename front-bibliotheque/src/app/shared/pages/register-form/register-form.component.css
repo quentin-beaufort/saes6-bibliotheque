@@ -1,0 +1,100 @@
+.bd {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.princip {
+  width: 100%;
+  max-width: 700px;
+  background-color: #343a40;
+  padding: 28px;
+  margin: 0 28px;
+  border-radius: 10px;
+  margin-top: -10%;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 6px;
+  color: white;
+  border-bottom: solid 1px white;
+  font-size: 20px;
+}
+
+.identité {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+.info label {
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  font-weight: 100px;
+  margin: 5px 0;
+}
+
+.info input {
+  height: 40px;
+  width: 90%;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+
+.sub button {
+  width: 20%;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  height: 28px;
+}
+
+button:hover {
+  color: #3498db;
+}
+
+.sub {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.log {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: solid 1px white;
+
+}
+
+.log button {
+  width: 40%;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  height: 28px;
+}
+
+.log h4 {
+  color: white;
+  padding-top: 10px;
+}

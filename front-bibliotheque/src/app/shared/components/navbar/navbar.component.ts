@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { ApiService } from '../../../services/api.service';
+import { Component, OnInit } from '@angular/core';
+import { Livre } from '../../../models/livre';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  livres: Livre[] = [];
+  showDropdown = false;
+
+  constructor(private apiService: ApiService) { }
+
+  ngOnInit(): void {
+    this.apiService.gettroisLivres().subscribe(livres => {
+      this.livres = livres;
+    });
+  }
 
 }
