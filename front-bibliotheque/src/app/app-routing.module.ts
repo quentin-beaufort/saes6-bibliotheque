@@ -8,6 +8,7 @@ import { LivreDetailsComponent } from './shared/pages/livre-details/livre-detail
 
 
 const routes: Routes = [
+  { path: '', component: LivresListComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'livres', component: LivresListComponent },

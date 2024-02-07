@@ -9,11 +9,9 @@
 form {
   flex: 1;
   text-align: center;
-  background-color: black;
-
+  background-color: #343a40;
   border-radius: 12px;
   margin-top: 10vh;
-
 }
 
 form legend {
@@ -23,4 +21,8 @@ form legend {
 
 form div {
   padding: 25px;
+}
+
+form button {
+  margin-bottom: 15px;
 }

@@ -4,9 +4,11 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" style="height: 100px; object-fit: none;" src={{livre.photoCouverture}}>
       <div class="card-body">
+        <div class="flex">
         <h5 class="card-title">{{ livre.titre }}</h5>
         <p class="card-text">{{ livre.date }}</p>
         <a href="details/{{livre.id}}" class="btn btn-primary">Détails</a>
+      </div>
       </div>
     </div>
   </div>
