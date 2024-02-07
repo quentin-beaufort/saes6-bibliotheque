@@ -19,3 +19,4 @@ export class LivreDetailsComponent {
     // charger les données en fonction de l'ID
   }
 }
+
