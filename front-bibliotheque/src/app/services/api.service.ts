@@ -10,7 +10,7 @@ import { Adherent } from '../models/adherent';
 })
 export class ApiService {
 
-  private apiUrl = 'http://127.0.0.1:8008/api'; // URL de notre API
+  private apiUrl = 'http://localhost:8008/api'; // URL de notre API
 
   constructor(
     private http: HttpClient
