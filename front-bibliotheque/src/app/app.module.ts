@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './shared/pages/login-form/login-form.component';
 import { LivresListComponent } from './shared/pages/livres-list/livres-list.component';
 import { LivreDetailsComponent } from './shared/pages/livre-details/livre-details.component';
+import { ModifierCompteComponent } from './shared/pages/modifier-compte/modifier-compte.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LivreDetailsComponent } from './shared/pages/livre-details/livre-detail
     LoginFormComponent,
     LivresListComponent,
     LivreDetailsComponent,
+    ModifierCompteComponent,
 
   ],
   imports: [

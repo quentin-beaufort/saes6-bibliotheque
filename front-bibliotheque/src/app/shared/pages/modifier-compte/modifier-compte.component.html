@@ -1,0 +1,34 @@
+<!-- modifier-compte.component.html -->
+<form (ngSubmit)="onSubmit()" class="container mt-5">
+  <div class="form-group">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="adherent.nom" />
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="adherent.prenom" />
+  </div>
+  <div class="form-group">
+    <label for="date_naiss">Date de naissance :</label>
+    <input type="text" id="date_naiss" name="date_naiss" class="form-control" [(ngModel)]="adherent.date_naiss" />
+  </div>
+  <div class="form-group">
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" class="form-control" [(ngModel)]="adherent.email" />
+  </div>
+  <div class="form-group">
+    <label for="adresse_postale">Adresse postale :</label>
+    <input type="text" id="adresse_postale" name="adresse_postale" class="form-control" [(ngModel)]="adherent.adresse_postale" />
+  </div>
+  <div class="form-group">
+    <label for="num_tel">Numéro de téléphone :</label>
+    <input type="text" id="num_tel" name="num_tel" class="form-control" [(ngModel)]="adherent.num_tel" />
+  </div>
+  <div class="form-group">
+    <label for="photo">URL de la photo :</label>
+    <input type="text" id="photo" name="photo" class="form-control" [(ngModel)]="adherent.photo" />
+  </div>
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary">Modifier le compte</button>
+  </div>
+</form>

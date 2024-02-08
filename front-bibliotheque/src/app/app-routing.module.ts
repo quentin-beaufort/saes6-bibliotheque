@@ -5,6 +5,7 @@ import { RegisterFormComponent } from './shared/pages/register-form/register-for
 import { LivresListComponent } from './shared/pages/livres-list/livres-list.component';
 import { LivreDetailsComponent } from './shared/pages/livre-details/livre-details.component';
 import { AdherentProfileComponent } from './shared/pages/adherent-profile/adherent-profile.component';
+import { ModifierCompteComponent } from './shared/pages/modifier-compte/modifier-compte.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'livres', component: LivresListComponent },
   { path: 'details/:id', component: LivreDetailsComponent },
   { path: 'compte', component: AdherentProfileComponent },
-  
+  { path: 'modifier-compte', component: ModifierCompteComponent }
+
 ];
 
 @NgModule({
