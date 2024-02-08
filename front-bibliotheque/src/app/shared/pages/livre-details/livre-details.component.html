@@ -12,7 +12,7 @@
     <div class="details">
         <div class="photo">
             <div class="titre"> <h2>{{ livre.titre}}</h2>
-                <h4>Qudyhefdef</h4></div>
+                <h4 *ngFor="let auteur of livre.auteurs">{{ auteur.nom }} </h4></div>
             <div class="info">
               <img class="card-img-top" style="height: 100px; object-fit: none;" src={{livre.photoCouverture}}>
             </div>
@@ -20,15 +20,7 @@
 
         <div class="pm">
 
-        <div class="description">
-            <h4>Description</h4>
-            <p>Le beluga, ou baleine blanche, est une espèce de cétacé à dents évoluant dans les régions arctiques et subarctiques.<br>
-                Scientifiquement désigné sous le nom de Delphinapterus leucas, cet animal marin se distingue par sa robe blanche caractéristique, qui contraste avec les eaux froides de son habitat.<br>
-                Doté d'un front bombé et d'un cou flexible, le beluga est réputé pour sa sociabilité et sa communication vocale complexe, émettant une variété de sifflements,<br>
-                clics et sérénades sous-marines.<br> Cette espèce joue un rôle crucial dans l'écosystème arctique et continue d'attirer
-                l'attention en raison de sa singularité et de sa vulnérabilité face aux changements environnementaux.</p>
-        </div>
-        <div class="description">
+          <div class="description">
             <h4>Information</h4>
             <table>
                 <tr>
@@ -53,6 +45,14 @@
                     </tr>
 
               </table>
+        </div>
+                <div class="description">
+            <h4>Description</h4>
+            <p>Le beluga, ou baleine blanche, est une espèce de cétacé à dents évoluant dans les régions arctiques et subarctiques.<br>
+                Scientifiquement désigné sous le nom de Delphinapterus leucas, cet animal marin se distingue par sa robe blanche caractéristique, qui contraste avec les eaux froides de son habitat.<br>
+                Doté d'un front bombé et d'un cou flexible, le beluga est réputé pour sa sociabilité et sa communication vocale complexe, émettant une variété de sifflements,<br>
+                clics et sérénades sous-marines.<br> Cette espèce joue un rôle crucial dans l'écosystème arctique et continue d'attirer
+                l'attention en raison de sa singularité et de sa vulnérabilité face aux changements environnementaux.</p>
         </div>
         <div class="description">
             <button>Réserver le livre</button>
