@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'inscription', component: RegisterFormComponent },
   { path: 'livres', component: LivresListComponent },
   { path: 'details/:id', component: LivreDetailsComponent },
-  { path: 'compte', component: AdherentProfileComponent }
+  { path: 'compte', component: AdherentProfileComponent },
+  
 ];
 
 @NgModule({

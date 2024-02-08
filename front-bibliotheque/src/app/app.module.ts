@@ -14,6 +14,7 @@ import { LoginFormComponent } from './shared/pages/login-form/login-form.compone
 import { LivresListComponent } from './shared/pages/livres-list/livres-list.component';
 import { LivreDetailsComponent } from './shared/pages/livre-details/livre-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { LivreDetailsComponent } from './shared/pages/livre-details/livre-detail
     LoginFormComponent,
     LivresListComponent,
     LivreDetailsComponent,
+
   ],
   imports: [
     BrowserModule,

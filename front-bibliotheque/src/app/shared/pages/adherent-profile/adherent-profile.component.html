@@ -1,20 +1,40 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h2>Mon Compte</h2>
+    <div class="col-md-6">
+      <h1>Mon Compte</h1>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Informations de compte</h5>
-          <p class="card-text">Crée le {{ adherent.date_adhesion }}</p>
-          <p class="card-text">Nom/Prénom : {{ adherent.nom }} {{ adherent.prenom }}</p>
-          <p class="card-text">Email : {{ adherent.email }}</p>
-          <p class="card-text">Date de naissance : {{ adherent.date_naiss }}</p>
-          <p class="card-text">Adresse postale : {{ adherent.adresse_postale }}</p>
-          <p class="card-text">Numéro de téléphone : {{ adherent.num_tel }}</p>
-          <p><img class="card-text" src={{adherent.photo}}></p>
-          <a href="#" class="btn btn-primary">Modifier les informations</a>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <!-- Partie gauche pour les informations -->
+            <div>
+              <p class="card-text"><strong>Nom/Prénom : </strong>{{ adherent.nom }} {{ adherent.prenom }}</p>
+              <p class="card-text"><strong>Email : </strong>{{ adherent.email }}</p>
+              <p class="card-text"><strong>Date de naissance :</strong> {{ adherent.date_naiss }}</p>
+              <p class="card-text"><strong>Créé le :</strong> {{ adherent.date_adhesion }}</p>
+              <p class="card-text"><strong>Adresse postale : </strong>{{ adherent.adresse_postale }}</p>
+              <p class="card-text"><strong>Numéro de téléphone : </strong>{{ adherent.num_tel }}</p>
+              <a href="#" class="btn btn-primary">Modifier mon compte</a>
+            </div>
+
+            <!-- Espace entre les parties gauche et droite -->
+            <div class="flex-gap"></div>
+
+            <!-- Partie droite pour l'image -->
+            <div>
+              <img src={{adherent.photo}} alt="Photo de profil">
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-6">
+      <h1>Liste des Réservations</h1>
+      <ul class="list-group">
+        <li class="list-group-item">Réservation 1</li>
+        <li class="list-group-item">Réservation 2</li>
+        <li class="list-group-item">Réservation 3</li>
+      </ul>
     </div>
   </div>
 </div>
