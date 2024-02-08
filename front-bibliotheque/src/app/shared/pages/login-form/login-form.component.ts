@@ -1,6 +1,9 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+
+
 
 @Component({
   selector: 'app-login-form',
@@ -13,15 +16,23 @@ export class LoginFormComponent {
     password: ''
   };
 
-  constructor(private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
-    
-    console.log('Formulaire soumis !', this.user);
+
+    this.authService.login(this.user.email, this.user.password)
+      .subscribe({
+        next: data => {
+          this.router.navigate(['/']);
+        },
+        error: err => {
+          console.error('Erreur lors de la connexion', err);
+        }
+      });
   }
 
   redirectToRegistration() {
-    
+
     this.router.navigate(['/inscription']);
   }
 }

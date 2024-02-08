@@ -14,6 +14,11 @@
               <p class="card-text"><strong>Adresse postale : </strong>{{ adherent.adresse_postale }}</p>
               <p class="card-text"><strong>Numéro de téléphone : </strong>{{ adherent.num_tel }}</p>
               <a href="modifier-compte" class="btn btn-primary">Modifier mon compte</a>
+           <button class="btn btn-primary" (click)="logout()" >
+              Logout
+              <i *ngIf="authService.currentAuthUserValue.isAdmin()">ADMIN</i>
+              <i *ngIf="!authService.currentAuthUserValue.isAdmin()">user</i>
+            </button>
             </div>
 
             <!-- Espace entre les parties gauche et droite -->
