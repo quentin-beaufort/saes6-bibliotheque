@@ -22,10 +22,11 @@ class Livre
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['livre:read', 'categorie:read', 'reservation:read', 'auteur:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['livre:read', 'livre:write', 'categorie:read', 'reservation:read'])]
+    #[Groups(['livre:read', 'livre:write', 'categorie:read', 'reservation:read', 'auteur:read'])]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]

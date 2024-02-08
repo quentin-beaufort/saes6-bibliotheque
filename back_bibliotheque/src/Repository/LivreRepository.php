@@ -29,6 +29,49 @@ class LivreRepository extends ServiceEntityRepository
             ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
     }
 
+    public function searchByComplex($searchwords, $category, $author, $language, $minYear, $maxYear)
+    {
+        $query = $this->createQueryBuilder('l');
+
+        if ($searchwords) {
+            $query->andWhere('l.titre LIKE :searchwords')
+                ->setParameter('searchwords', '%' . $searchwords . '%');
+        }
+
+        if ($category) {
+            $query->innerJoin('l.categories', 'c')
+                ->andWhere('c.nom = :category')
+                ->setParameter('category', $category);
+        }
+
+        if ($author) {
+            $query->innerJoin('l.auteurs', 'a')
+                ->andWhere('a.nom = :author')
+                ->setParameter('author', $author);
+        }
+
+        if ($language) {
+            $query->andWhere('l.langue = :language')
+                ->setParameter('language', $language);
+        }
+
+        if ($minYear) {
+            //Reformatage de l'écriture de la date pour la requête
+            $minYear = $minYear . '-01-01';
+            $query->andWhere('l.dateSortie >= :minYear')
+                ->setParameter('minYear', $minYear);
+        }
+
+        if ($maxYear) {
+            //Reformatage de l'écriture de la date pour la requête
+            $maxYear = $maxYear . '-12-31';
+            $query->andWhere('l.dateSortie <= :maxYear')
+                ->setParameter('maxYear', $maxYear);
+        }
+
+        return $query->getQuery()->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+    }
+
 //    /**
 //     * @return Livre[] Returns an array of Livre objects
 //     */
