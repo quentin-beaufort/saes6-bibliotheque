@@ -1,18 +1,8 @@
-```<style>
-    table {
-      border-collapse: separate;
-      border-spacing: 20px;
-    }
-    td {
-      border: 1px solid black;
-      padding: 5px;
-    }
-  </style>
 <div class="princip">
     <div class="details">
         <div class="photo">
             <div class="titre"> <h2>{{ livre.titre}}</h2>
-                <h4 *ngFor="let auteur of livre.auteurs">{{ auteur.nom }} </h4></div>
+                <h4>{{ livre.langue }} </h4></div>
             <div class="info">
               <img class="card-img-top" style="height: 100px; object-fit: none;" src={{livre.photoCouverture}}>
             </div>
@@ -60,8 +50,3 @@
     </div>
 </div>
 </div>
-
-
-```
-
-

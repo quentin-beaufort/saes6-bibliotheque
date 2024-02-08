@@ -20,8 +20,8 @@
           </li>
 
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Titre / Auteur">
+        <form class="d-flex" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+          <input class="form-control me-sm-2" type="search" placeholder="Titre" name="search" ngModel>
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
