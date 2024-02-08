@@ -32,7 +32,7 @@ export class ApiService {
     return this.http.get<Categorie[]>(`${this.apiUrl}/categories`);
   }
 
-  getLivreId(id: number): Observable<Livre> {
+  getLivresId(id: number): Observable<Livre> {
     return this.http.get<Livre>(`${this.apiUrl}/livres/${id}`);
   }
 

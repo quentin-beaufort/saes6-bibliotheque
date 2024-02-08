@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 .princip {
     display: flex;
     justify-content: center;
@@ -18,36 +19,35 @@
 }
 
 .photo {
-    width: 40%;
-    display: flex;
-    background-color: #343a40;
-    justify-content: center;
-    align-items: center;
+    width: 60%;
     flex-direction: column;
     height: 55vh;
-    border-radius: 10px;
     gap: 40px;
     overflow: hidden; /* Empêche le contenu de déborder à l'intérieur de la div */
-    color: white;
+    color: #343a40;
     padding: 10px;
-    
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: #343a40;
 }
 
 .description {
-    width: 35%;
+    width: 65%;
     padding: 10px;
-    border: 5px solid #343a40;
+    margin: 10px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
 }
 
 .description p {
     color: #343a40;
-    padding: 10px;
+    padding: 15px;
 }
 
 .image-size {
-    width: 500px; 
+    width: 700px;
     max-width: 100%;
     border: 5px solid white;
 }
@@ -55,3 +55,31 @@
 h2{
     margin-top: 2%;
 }
+
+table{
+    background-color: #f1f1f1;
+}
+
+.pm{
+    margin-top: -6%;
+    padding: 5%;
+}
+
+.reserver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-top: 5%;
+
+}
+
+.description button{
+  width: 100%;
+  border: none;
+}
+
+button:hover {
+    color: #3498db;
+  }
+
