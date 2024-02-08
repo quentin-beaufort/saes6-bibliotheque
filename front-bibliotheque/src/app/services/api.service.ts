@@ -17,7 +17,7 @@ export class ApiService {
   ) { }
 
   getAuthors(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/authors`);
+    return this.http.get<string[]>(`${this.apiUrl}/auteurs`);
   }
 
   getLivres(): Observable<Livre[]> {
@@ -28,16 +28,12 @@ export class ApiService {
     return this.http.get<Adherent[]>(`${this.apiUrl}/adherents/${id}`);
   }
 
-  gettroisLivres(): Observable<Livre[]> {
-    return this.http.get<Livre[]>(`${this.apiUrl}/troislivre`);
-  }
-
   getCategories(): Observable<Categorie[]> {
     return this.http.get<Categorie[]>(`${this.apiUrl}/categories`);
   }
 
   getLivreId(id: number): Observable<Livre> {
-    return this.http.get<Livre>(`${this.apiUrl}/livre/${id}`);
+    return this.http.get<Livre>(`${this.apiUrl}/livres/${id}`);
   }
 
   getLivresBySearch(searchwords: string, language: string, category: string, author: string, minYear: string, maxYear: string): Observable<Livre[]> {
