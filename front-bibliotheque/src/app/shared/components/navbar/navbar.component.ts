@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+
+import { ApiService } from '../../../services/api.service';
+import { Component, OnInit } from '@angular/core';
+import { Livre } from '../../../models/livre';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +12,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router) {}
+  constructor(private apiService: ApiService, public authService: AuthService,
+    private router: Router) { }
+
+
+
+
 
   onSubmit(formValue: any) {
     const queryParams = {

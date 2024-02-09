@@ -12,13 +12,21 @@
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/login">Compte</a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" routerLink="/reserver-livre">Réservation</a>
           </li>
+          <li class="nav-item" *ngIf="authService.currentAuthUserValue.isLogged()" >
 
+
+
+        </li>
+        <li class="nav-item"  *ngIf="authService.currentAuthUserValue.isLogged()">
+          <a class="nav-link"  routerLink="/compte">Compte</a>
+        </li>
+        <li class="nav-item"   *ngIf="!authService.currentAuthUserValue.isLogged()"  >
+            <a class="nav-link" routerLink="/login">Login</a>
+        </li>
         </ul>
         <form class="d-flex" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
           <input class="form-control me-sm-2" type="search" placeholder="Titre" name="search" ngModel>
