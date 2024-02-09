@@ -1,70 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Livre } from '../../../models/livre';
 import { ApiService } from '../../../services/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-livres-list',
   templateUrl: './livres-list.component.html',
   styleUrl: './livres-list.component.css'
 })
-export class LivresListComponent
-// implements OnInit
-{
-  // livres: Livre[] = [];
+export class LivresListComponent implements OnInit{
 
-  livres = [{
-    'id': 1,
-    'titre': 'Beluga',
-    'photoCouverture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6fdf4CLjlvihE7K9Da-D0EHRXimf0Ioz86g',
-    'date': '00-00-000'
-  },
-  {
-    'id': 2,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
-  },
-  {
-    'id': 3,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
-  },
-  {
-    'id': 4,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
-  },
-  {
-    'id': 1,
-    'titre': 'Beluga',
-    'photoCouverture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6fdf4CLjlvihE7K9Da-D0EHRXimf0Ioz86g',
-    'date': '00-00-000'
-  },
-  {
-    'id': 2,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
-  },
-  {
-    'id': 3,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
-  },
-  {
-    'id': 4,
-    'titre': 'BelugaXL',
-    'photoCouverture': 'https://img.20mn.fr/WrgtK5YNQmC9xS8Km_12AA/960x614_nouveau-beluga-xl-avionneur-airbus',
-    'date': '00-00-000'
+  livres: Livre[] = [];
+  triAscendant: boolean = true;
+  search: string = '';
+
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router){}
+
+  ngOnInit(): void{
+
+    this.route.queryParams.subscribe(params => {
+      this.search = params['search'];
+    });
+    if(this.search == null){
+      this.apiService.getLivres().subscribe((data:Livre[]) => {
+        this.livres = data;
+        this.trierLivresParTitre();
+      });
+    }
+    else{
+      this.apiService.getLivresBySearch(this.search, '', '', '', '', '').subscribe((data:Livre[]) => {
+        this.livres = data;
+        this.trierLivresParTitre();
+      });
+    }
   }
 
-  ];
-  //constructor(private apiService: ApiService){}
+  trierLivresParTitre(): void {
+    if (this.triAscendant) {
+      this.livres.sort((a, b) => a.titre.localeCompare(b.titre));
+    } else {
+      this.livres.sort((a, b) => b.titre.localeCompare(a.titre));
+    }
+  }
 
-  //ngOnInit(): void{
-  //  this.apiService.getLivres().subscribe((data:Livre[]) => { this.livres = data; });
-  //}
+  changerOrdreTri(): void {
+    this.triAscendant = !this.triAscendant;
+    this.trierLivresParTitre();
+  }
 }

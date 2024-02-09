@@ -1,17 +1,25 @@
-<h2 style="text-align: center;">Liste des Livres</h2>
-<div class="row container-fluid">
-  <div class="col-sm-3" *ngFor="let livre of livres">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" style="height: 100px; object-fit: none;" src={{livre.photoCouverture}}>
-      <div class="card-body">
-        <div class="flex">
-        <h5 class="card-title">{{ livre.titre }}</h5>
-        <p class="card-text">{{ livre.date }}</p>
-        <a href="details/{{livre.id}}" class="btn btn-primary">Détails</a>
-      </div>
+<div class="container" style="margin-top: 2%;">
+    <div class="titre">
+      <h2>Liste des Livres ({{livres.length}} livre(s))</h2>
+    </div>
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="width: auto; text-align-last: right;" (change)="changerOrdreTri()">
+        <option value="asc" [selected]="triAscendant">Titre Ascendant</option>
+        <option value="desc" [selected]="!triAscendant">Titre Descendant</option>
+      </select>
+
+  </div>
+<hr>
+<div class="container">
+  <div class="row" >
+    <div class="col-sm-4" *ngFor="let livre of livres">
+      <div class="card" style="margin-bottom: 20px;">
+        <img class="card-img-top" style="height: 100px; object-fit: cover;" src="{{livre.photoCouverture}}">
+        <div class="card-body">
+          <h4 class="card-title">{{ livre.titre }}</h4>
+          <p class="card-text">{{ livre.dateSortie | date:'dd/MM/yy' }}</p>
+          <a href="details/{{livre.id}}" class="btn btn-primary">Détails</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Mettre nom livre, image livre, date-->

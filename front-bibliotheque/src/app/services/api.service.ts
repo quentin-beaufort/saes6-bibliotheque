@@ -10,14 +10,14 @@ import { Adherent } from '../models/adherent';
 })
 export class ApiService {
 
-  private apiUrl = 'http://127.0.0.1:8008/api'; // URL de notre API
+  private apiUrl = 'https://127.0.0.1:8008/api'; // URL de notre API
 
   constructor(
     private http: HttpClient
   ) { }
 
   getAuthors(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/authors`);
+    return this.http.get<string[]>(`${this.apiUrl}/auteurs`);
   }
 
   getLivres(): Observable<Livre[]> {
@@ -28,16 +28,12 @@ export class ApiService {
     return this.http.get<Adherent[]>(`${this.apiUrl}/adherents/${id}`);
   }
 
-  gettroisLivres(): Observable<Livre[]> {
-    return this.http.get<Livre[]>(`${this.apiUrl}/troislivre`);
-  }
-
   getCategories(): Observable<Categorie[]> {
     return this.http.get<Categorie[]>(`${this.apiUrl}/categories`);
   }
 
-  getLivreId(id: number): Observable<Livre> {
-    return this.http.get<Livre>(`${this.apiUrl}/livre/${id}`);
+  getLivresId(id: number): Observable<Livre> {
+    return this.http.get<Livre>(`${this.apiUrl}/livres/${id}`);
   }
 
   getLivresBySearch(searchwords: string, language: string, category: string, author: string, minYear: string, maxYear: string): Observable<Livre[]> {
@@ -48,6 +44,7 @@ export class ApiService {
     if (language) {
       params = params.set('language', language);
     }
+
     if (category) {
       params = params.set('category', category);
     }

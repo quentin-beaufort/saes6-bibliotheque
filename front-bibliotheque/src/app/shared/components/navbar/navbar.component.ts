@@ -1,3 +1,4 @@
+
 import { ApiService } from '../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Livre } from '../../../models/livre';
@@ -9,9 +10,7 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  livres: Livre[] = [];
-  showDropdown = false;
+export class NavbarComponent {
 
   constructor(private apiService: ApiService, public authService: AuthService,
     private router: Router) { }
@@ -19,10 +18,12 @@ export class NavbarComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-    this.apiService.gettroisLivres().subscribe(livres => {
-      this.livres = livres;
-    });
-  }
 
+  onSubmit(formValue: any) {
+    const queryParams = {
+      search: formValue.search
+    };
+
+    this.router.navigate(['/livres'], { queryParams: queryParams });
+  }
 }
